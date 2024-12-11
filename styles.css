@@ -113,45 +113,133 @@ body {
 
 /* Skills Section */
 #skills {
+    background: #161b22;
+    color: #e4e6eb;
+    padding: 6rem 2rem;
     text-align: center;
-    background: #0d1117;
-    color: #c9d1d9;
-    padding: 3rem 2rem;
+    box-sizing: border-box;
 }
 
+#skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #e4e6eb; /* Title in white */
+}
+
+.skills-intro {
+    font-size: 1.2rem;
+    color: #c9d1d9;
+    text-decoration-line: underline;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* Skills List */
 .skills-list {
-    list-style: none;
+    list-style: none; /* Remove default bullets */
     padding: 0;
-    margin: 2rem 0;
+    margin: 0 auto;
+    max-width: 700px; /* Limit the width for readability */
+    text-align: left;
 }
 
 .skills-list li {
-    font-size: 1.1rem;
-    margin: 0.5rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
 }
 
-/* Portfolio Section */
-#portfolio {
-    padding: 3rem 2rem;
-    background: #161b22;
+/* Checkmark Icon */
+.skills-list li::before {
+    content: "✔"; /* Add checkmark */
+    /*color: #58a6ff;  Highlighted color */
+    font-weight: bold;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
 }
 
-.project {
-    margin: 1.5rem 0;
-    padding: 1.5rem;
-    background: #1e2229;
-    border-radius: 5px;
+.skills-intro,
+.skills-list {
+    max-width: 700px; /* Shared width */
+    margin: 0 auto; /* Center align */
+    text-align: left; /* Align text to the left */
 }
 
-.project h3 {
-    margin: 0 0 0.5rem;
+/* Companies Section */
+#companies {
+    background: #0d1117;
     color: #e4e6eb;
+    padding: 6rem 2rem;
+    text-align: center;
+    box-sizing: border-box;
 }
 
-.project a {
-    color: #58a6ff;
-    text-decoration: none;
+#companies h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    /*color: #58a6ff;*/
 }
+
+/* Company List */
+.company-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Individual Company Card */
+.company {
+    background: #161b22;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Role */
+.company h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #58a6ff;
+}
+
+.company .role {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #c9d1d9;
+    margin-bottom: 0.5rem;
+}
+
+/* Date and Location */
+.company .date-location {
+    font-size: 1rem;
+    font-style: italic;
+    color: #8b949e;
+    margin-bottom: 1rem;
+}
+
+/* Description */
+.company .description {
+    font-size: 1rem;
+    color: #c9d1d9;
+    line-height: 1.6;
+}
+
+
 
 /* Call to Action Section */
 #contact {
