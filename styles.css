@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
@@ -10,7 +14,8 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 2rem 0;
 }
@@ -18,28 +23,30 @@ body {
 #hero {
     background: #161b22;
     color: #fff;
-    padding: 6rem 2rem; /* Increased padding for a spacious feel */
+    padding: 6rem 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    min-height: 100vh; /* Ensure it covers the full screen */
+    min-height: 100vh;
+    flex-direction: column; /* Default: Stack content vertically on small screens */
+    text-align: center;
 }
 
 /* Hero Content Wrapper */
 .hero-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Default: Stack everything vertically for mobile */
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem; /* Add space between text and image */
+    justify-content: center;
+    gap: 2rem;
 }
 
 /* Hero Text */
 .hero-text {
-    flex: 1;
-    margin-right: 2rem;
-    text-align: left;
+    text-align: center; /* Center-align text by default */
+    max-width: 700px;
+    margin-bottom: 2rem; /* Add spacing before Hero Art */
 }
 
 .primer {
@@ -96,7 +103,7 @@ body {
 }
 
 .hero-art img {
-    width: 350px; /* Larger image for balance */
+    width: 350px; /* Smaller image for mobile */
     height: 350px;
     border-radius: 50%;
     border: 4px solid #30363d;
@@ -108,6 +115,53 @@ body {
     transform: scale(1.05);
 }
 
+.mobile-hero-art {
+    display: block;
+    margin: 1rem auto;
+}
+
+.mobile-hero-art img {
+    width: 200px; /* Smaller image for mobile */
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #30363d;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hero-art {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    #hero {
+        flex-direction: row; /* Horizontal layout for larger screens */
+        max-width: 100vw;
+    }
+
+    .hero-content {
+        flex-direction: row; /* Side-by-side layout */
+        justify-content: space-between;
+        gap: 4rem;
+    }
+
+    .hero-text {
+        text-align: left; /* Left-align text on larger screens */
+        margin-bottom: 0; /* Remove spacing since Hero Art will be beside text */
+    }
+
+    .hero-art {
+        display: flex; /* Show Hero Art for larger screens */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-hero-art {
+        display: none; /* Hide mobile Hero Art */
+    }
+}
 
 /* end of hero section */
 
@@ -118,6 +172,7 @@ body {
     padding: 6rem 2rem;
     text-align: center;
     box-sizing: border-box;
+    padding: 4rem 1rem;
 }
 
 #skills h2 {
@@ -139,8 +194,10 @@ body {
     list-style: none; /* Remove default bullets */
     padding: 0;
     margin: 0 auto;
-    max-width: 700px; /* Limit the width for readability */
+    /*max-width: 700px; /* Limit the width for readability */
     text-align: left;
+    max-width: 100%;
+    padding: 0;
 }
 
 .skills-list li {
@@ -253,4 +310,42 @@ footer {
     background: #161b22;
     color: #8b949e;
     padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+    .skills-list {
+        max-width: 700px; /* Expand width for larger screens */
+    }
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    /*color: #58a6ff;  Blue to match LinkedIn theme */
+    color: #c9d1d9;
+    font-size: 1.2rem;
+    font-weight: bold;
+    gap: 0.5rem; /* Space between logo and text */
+    transition: color 0.3s ease;
+}
+
+.linkedin-link img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.linkedin-link:hover {
+    color: #1f6feb;
+}
+
+.linkedin-link:hover img {
+    transform: scale(1.2); /* Slight zoom on hover */
 }
